@@ -23,6 +23,7 @@ let config = {
 };
 
 app.post('/get-image-png', async (req, res) => {
+  console.log(process.env.STABLE_DIFF_API);
   const prompt = req.body;
   try {
     config.headers['Accept'] = ACCEPT_TYPE_PNG;
@@ -43,6 +44,7 @@ app.post('/get-image-png', async (req, res) => {
 });
 
 app.post('/get-image-base64', async (req, res) => {
+  console.log(process.env.STABLE_DIFF_API);
   const prompt = req.body;
   try {
     config.headers['Accept'] = ACCEPT_TYPE_JSON;
